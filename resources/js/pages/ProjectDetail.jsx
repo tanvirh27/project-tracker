@@ -8,7 +8,8 @@ import StatusBadge from '../components/StatusBadge';
 import ProgressBar from '../components/ProgressBar';
 import { Skeleton, SkeletonCard } from '../components/Skeleton';
 
-const EMPTY_GOAL = { title: '', description: '', start_date: '', deadline: '' };
+const TODAY = new Date().toISOString().split('T')[0];
+const EMPTY_GOAL = { title: '', description: '', start_date: TODAY, deadline: '' };
 
 const inputClass = 'w-full rounded-lg bg-slate-100 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none ring-1 ring-slate-300 focus:ring-indigo-500 dark:bg-slate-800 dark:text-white dark:placeholder-slate-500 dark:ring-slate-700';
 

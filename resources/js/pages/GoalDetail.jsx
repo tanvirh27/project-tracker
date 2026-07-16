@@ -75,21 +75,29 @@ function TaskForm({ goalId, categories, initial, onSave, onCancel }) {
         <form onSubmit={handleSubmit} className="rounded-xl bg-white p-4 ring-1 ring-slate-200 space-y-3 dark:bg-slate-900 dark:ring-slate-800">
             <div className="grid grid-cols-2 gap-3">
                 <div className="col-span-2">
+                    <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
+                        Title <span className="text-red-500">*</span>
+                    </label>
                     <input type="text" {...field('title')} required placeholder="Task title" className={inputClass} />
                     <FieldError name="title" />
                 </div>
                 <div>
+                    <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
+                        Deadline <span className="text-red-500">*</span>
+                    </label>
                     <input type="date" {...field('deadline')} required className={inputClass} />
                     <FieldError name="deadline" />
                 </div>
                 <div>
+                    <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">Category</label>
                     <select {...field('category_id')} className={inputClass}>
                         <option value="">No category</option>
                         {categories.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
                     </select>
                 </div>
                 <div className="col-span-2">
-                    <textarea {...field('description')} rows={2} placeholder="Description (optional)"
+                    <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">Description</label>
+                    <textarea {...field('description')} rows={2} placeholder="Optional"
                         className={`${inputClass} resize-none`}
                     />
                 </div>
